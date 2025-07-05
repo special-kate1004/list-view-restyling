@@ -1,0 +1,89 @@
+<div class="property-card-container">
+  <div class="property-image-bg">
+    <img *ngIf="event().photo_url; else placeholder" [src]="event().photo_url" [alt]="event().title" />
+    <ng-template #placeholder>
+      <div class="property-image-placeholder">
+        <mat-icon>image</mat-icon>
+      </div>
+    </ng-template>
+  </div>
+  <div
+    class="property-card-floating"
+    [ngClass]="{
+    'live': event().status === 1,
+    'completed': event().status === 2,
+    'draft': event().status === 0
+  }">
+    <div class="property-accent-dot"></div>
+    <div
+      class="property-status-chip"
+      [ngClass]="{
+      'live': event().status === 1,
+      'completed': event().status === 2,
+      'draft': event().status === 0
+    }">
+      {{ event().status === 1 ? 'Veröffentlicht' : 'Abgeschlossen' }}
+    </div>
+    <div class="property-content">
+      <div class="property-main">
+        <div class="property-header">
+          <div class="property-title">{{ event().title }}</div>
+          <div class="property-subtitle">
+            <!-- <mat-icon
+              _ngcontent-ng-c4000833487=""
+              role="img"
+              class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
+              aria-hidden="true"
+              data-mat-icon-type="font"
+              >business</mat-icon
+            > -->
+            <img src="/assets/images/enterprise.jpg" alt="business" style="width: 20px; height: 20px" />
+            By {{ event().organization_name || 'Unknown' }}
+          </div>
+          <div class="property-address">
+            <img src="/assets/images/flaticon-address.svg" alt="business" style="width: 20px; height: 20px" />
+            {{ event().address ? (event().address?.street + ', ' + event().address?.city) : 'Location not specified' }}
+          </div>
+        </div>
+        <div class="property-market-status-row">
+          <span class="property-status"
+            ><mat-icon
+              _ngcontent-ng-c4000833487=""
+              role="img"
+              class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
+              aria-hidden="true"
+              data-mat-icon-type="font"
+              >group</mat-icon
+            ><span
+              >{{ event().slots_free }} / {{ event().slots_available }} {{ event().slots_available | i18nPlural: { '=0':
+              'Plätze', '=1': 'Platz', 'other': 'Plätze' } }} verfügbar</span
+            ></span
+          >
+        </div>
+      </div>
+      <div class="property-side">
+        <div class="property-features-row">
+          <span class="feature-item">
+            <img src="/assets/images/flaticon-timing.svg" alt="business" style="width: 20px; height: 20px" />
+            <span
+              >{{ event().duration_hours }} {{ event().duration_hours | i18nPlural: { '=0': 'Stunden', '=1': 'Stunde',
+              'other': 'Stunden' } }}</span
+            >
+          </span>
+          <span class="property-market"
+            ><mat-icon
+              _ngcontent-ng-c4000833487=""
+              role="img"
+              class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
+              aria-hidden="true"
+              data-mat-icon-type="font"
+              >schedule</mat-icon
+            ><span
+              >{{ event().work_from | date:'dd.MM.yyyy HH:mm' }} - {{ event().work_to | date:'dd.MM.yyyy HH:mm' }}</span
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

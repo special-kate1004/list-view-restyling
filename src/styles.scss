@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Figtree', sans-serif;
+  src: url('./assets/fonts/figtree-normal-latin.woff2') format('woff2-variations');
+  font-display: swap;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  hyphens: auto;
+  hyphenate-limit-chars: 5 12 5;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+// Apply Figtree font to text elements specifically
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div,
+button,
+input,
+textarea,
+label {
+  font-family: 'Montserrat', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+// Ensure Material Icons use their correct font
+mat-icon {
+  font-family: 'Material Icons' !important;
+}
+
+/* Custom styles for web components */
+:host {
+  display: block;
+  contain: content;
+}
+
+/* Ensure styles are scoped to our components */
+:root {
+  --inmojo-primary-color: #007bff;
+  --inmojo-secondary-color: #6c757d;
+  --inmojo-background-color: #ffffff;
+  --inmojo-font-family: "Montserrat", "Fira Sans", sans-serif;
+  --inmojo-border-radius: 4px;
+  --inmojo-padding: 16px;
+}
+
+/* You can add global styles to this file, and also import other style files */

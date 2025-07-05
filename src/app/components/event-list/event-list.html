@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="list-container">
+    @if(loading$ | async; as loading) {
+    <div class="loading">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+    } @if(error$ | async; as error) {
+    <div class="error">{{ error }}</div>
+    } @if(events$ | async; as events) {
+    <div class="event-list">
+      @for(event of events; track event.id) {
+      <app-event-list-item [event]="event" (eventClick)="onEventClick($event)"> </app-event-list-item>
+      }
+    </div>
+
+    <mat-paginator
+      class="paginator"
+      [hidePageSize]="true"
+      [pageSize]="pageSize"
+      [pageIndex]="pageIndex"
+      [length]="totalEvents"
+      (page)="onPageChange($event)"
+      aria-label="Seite auswählen"></mat-paginator>
+    }
+  </div>
+</div>

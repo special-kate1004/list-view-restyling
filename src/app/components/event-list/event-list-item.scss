@@ -1,0 +1,20 @@
+.property-status-chip {
+    position: absolute;
+    bottom: 18px;
+    right: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    height: 36px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Inter', Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(162, 89, 255, 0.08);
+    z-index: 10;
+    color: #fff;
+    letter-spacing: 0.01em;
+    background: #a259ff;
+    transition: background 0.2s, color 0.2s;
+}
