@@ -46,15 +46,9 @@
           </div>
         </div>
         <div class="property-market-status-row">
-          <span class="property-status"
-            ><mat-icon
-              _ngcontent-ng-c4000833487=""
-              role="img"
-              class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
-              aria-hidden="true"
-              data-mat-icon-type="font"
-              >group</mat-icon
-            ><span
+          <span class="property-status">
+            <img src="/assets/images/add-friend2.svg" alt="business" style="width: 20px; height: 20px" />
+            <span
               >{{ event().slots_free }} / {{ event().slots_available }} {{ event().slots_available | i18nPlural: { '=0':
               'Plätze', '=1': 'Platz', 'other': 'Plätze' } }} verfügbar</span
             ></span
@@ -70,15 +64,9 @@
               'other': 'Stunden' } }}</span
             >
           </span>
-          <span class="property-market"
-            ><mat-icon
-              _ngcontent-ng-c4000833487=""
-              role="img"
-              class="mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
-              aria-hidden="true"
-              data-mat-icon-type="font"
-              >schedule</mat-icon
-            ><span
+          <span class="property-market">
+            <img src="/assets/images/calendar.svg" alt="business" style="width: 20px; height: 20px" />
+            <span
               >{{ event().work_from | date:'dd.MM.yyyy HH:mm' }} - {{ event().work_to | date:'dd.MM.yyyy HH:mm' }}</span
             ></span
           >
